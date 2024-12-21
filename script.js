@@ -18,7 +18,7 @@ function getHumanChoice() {
     while (true) {
         s = prompt("Rock, Paper, or Scissors?");
         choice = s.toLowerCase();
-        if (choice === "rock" || choice === "paper" || choice === "rock") {
+        if (choice === "rock" || choice === "paper" || choice === "scissors") {
             break;
         }
     }
