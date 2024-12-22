@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+body {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.gameText {
+    margin: 10px;
+}
+
+.buttons {
+    margin-bottom: 10px;
+}
+
+button {
+    font-size: 20px;
+}
