@@ -26,6 +26,7 @@ function playRound(humanChoice, computerChoice) {
     
     playerResult = ""
 
+    //checking who won the round
     if (humanChoice === computerChoice) {
         playerResult = "tie";
     }
@@ -54,6 +55,7 @@ function playRound(humanChoice, computerChoice) {
         playerResult = "lose";
     }
 
+    //player round results
     if (playerResult === "tie") {
         gameText.textContent = `Tie! Both players picked ${capitalizeFirstLetter(humanChoice)}`;
     }
@@ -68,6 +70,7 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
     }
 
+    //checking if a player has won
     if (humanScore == win_amount) {
         gameText.textContent = `Winner is Player!`
         humanScore = 0
@@ -80,22 +83,27 @@ function playRound(humanChoice, computerChoice) {
         computerScore = 0
     }
 
+    //updating point text on screen
     playerScoreText.textContent = `Player Score: ${humanScore}`
     computerScoreText.textContent = `Computer Score: ${computerScore}`
 }
 
+//declaring what button is
 const buttons = document.querySelectorAll("button");
 
+
 function buttonClicked(e) {
-    const humanChoice = e.target.className
+    const humanChoice = e.target.className //gets choice from the class name in HTML file
     const computerChoice = getComputerChoice()
     playRound(humanChoice, computerChoice)
 }
 
+//loops through each button in page
 buttons.forEach((button) => {
     button.addEventListener("click", buttonClicked);
 });
 
+//declaring all changing texts on page
 const gameText = document.querySelector(".gameText")
 const playerScoreText = document.querySelector(".playerScoreText")
 const computerScoreText = document.querySelector(".computerScoreText")
